@@ -1,3 +1,3 @@
 MPR_Projekt
 ===========
-Prjekt Metody Programowania PJWSTK
+Projekt Metody Programowania PJWSTK
