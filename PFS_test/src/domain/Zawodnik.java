@@ -9,6 +9,8 @@ public class Zawodnik extends Entity {
 		this.wyniki = new ArrayList<Wyniki>();
 	}
 	
+	
+	
 	private String imie;
 	private String nazwisko;
 	private String wiek;
@@ -17,6 +19,15 @@ public class Zawodnik extends Entity {
 	private String badania;
 	private String zgoda;
 	private List<Wyniki> wyniki;
+	private Szkolenie szkolenie;
+	
+	
+	public Szkolenie getSzkolenie() {
+		return szkolenie;
+	}
+	public void setSzkolenie(Szkolenie szkolenie) {
+		this.szkolenie = szkolenie;
+	}
 	
 	
 	
@@ -76,7 +87,7 @@ public class Zawodnik extends Entity {
 		this.zgoda = zgoda;
 	}
 
-	public List<Wyniki> getAddresses() {
+	public List<Wyniki> getWyniki() {
 		return wyniki;
 	}
 	public void setWyniki(List<Wyniki> wyniki) {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="/home/student/git/MPR_Projekt/.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="http://github.com/Tokiya/Test2014Gr4.git"/>
+		<item value="https://github.com/Tokiya/Test2014Gr4.git"/>
+		<item value="ssh://git@github.com/s5907/MPR_Projekt.git"/>
+		<item value="http://git@github.com/s5907/MPR_Projekt.git"/>
+		<item value="ftp://git@github.com/s5907/MPR_Projekt.git"/>
+		<item value="git@github.com:s5907/MPR_Projekt.git"/>
+	</list>
+	<section name="GitImportWizard">
+		<item value="true" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
+	</section>
+</section>
