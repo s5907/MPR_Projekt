@@ -57,6 +57,11 @@ public class Uzytkownik extends Entity {
 	public void setAdresy(List<Adresy> adresy) {
 		this.adresy = adresy;
 	}
+
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 		
 }
