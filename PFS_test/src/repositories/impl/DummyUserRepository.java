@@ -2,12 +2,12 @@ package repositories.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import domain.Uzytkownik;
+
 import domain.Role;
-import domain.User;
+import domain.Uzytkownik;
 import repozytorium.IUserRepozytorium;
 
-public class DummyUserRepository implements IUserRepozytorium, IUserRepository{
+public class DummyUserRepository implements IUserRepozytorium{
 
 	private DummyDb db;
 	
@@ -17,58 +17,59 @@ public class DummyUserRepository implements IUserRepozytorium, IUserRepository{
 	}
 
 	@Override
-	public void save(User entity) {
-		db.users.add(entity);
+	public void save(Uzytkownik entity) {
+		db.uzytkownicy.add(entity);
 		
 	}
 
 	@Override
-	public void update(User entity) {
+	public void update(Uzytkownik entity) {
 
 		
 	}
 
 	@Override
-	public void delete(User entity) {
-		db.users.remove(entity);
+	public void delete(Uzytkownik entity) {
+		db.uzytkownicy.remove(entity);
 		
 	}
 
 	@Override
-	public User get(int id) {
-		for(User u:db.users)
+	public Uzytkownik get(int id) {
+		for(Uzytkownik u:db.uzytkownicy)
 			if(u.getId()==id)
 				return u;
 		return null;
 	}
 
 	@Override
-	public List<User> getAll() {
+	public List<Uzytkownik> getAll() {
 
-		return db.users;
+		return db.uzytkownicy;
 	}
 
 	@Override
-	public List<User> withRole(Role role) {
+	public List<Uzytkownik> withRole(Role role) {
 		return withRole(role.getId());
 	}
 
 	@Override
-	public List<User> withRole(String roleName) {
+	public List<Uzytkownik> withRole(String roleName) {
 
 		for(Role r:db.roles)
 			if(r.getName().equals(roleName))
-				return r.getUsers();
-		return new ArrayList<User>();
+				return r.getUzytkownicy();
+		return new ArrayList<Uzytkownik>();
 	}
 
 	@Override
-	public List<User> withRole(int roleId) {
+	public List<Uzytkownik> withRole(int roleId) {
 
 		for(Role r:db.roles)
 			if(r.getId()==roleId)
-				return r.getUsers();
-		return new ArrayList<User>();
+				return r.getUzytkownicy();
+		return new ArrayList<Uzytkownik>();
 	}
 
 }
+

@@ -1,6 +1,7 @@
 import java.util.List;
 
 import domain.User;
+import domain.Uzytkownik;
 import repositories.impl.DummyRepositoryCatalog;
 import repozytorium.IRepozytoriumKatalog;
 
@@ -10,7 +11,7 @@ public class Main {
 
 		IRepozytoriumKatalog catalog = new DummyRepositoryCatalog();
 		
-		List<User> admins = catalog.getUsers().withRole("administrator");
+		List<User> admins = catalog.getUzytkownicy().withRole("administrator");
 	}
 
 }

@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Role {
 
-	public Object getName() {
+	public Object getImie() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public List<User> getUsers() {
+	public List<User> getUzytkownicy() {
 		// TODO Auto-generated method stub
 		return null;
 	}

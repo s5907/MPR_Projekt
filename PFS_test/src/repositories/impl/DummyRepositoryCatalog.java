@@ -11,7 +11,7 @@ public class DummyRepositoryCatalog implements IRepozytoriumKatalog{
 	private DummyDb db = new DummyDb();
 	
 	@Override
-	public IUserRepository getUsers() {
+	public IUserRepozytorium getUzytkownicy() {
 		return new DummyUserRepository(db);
 	}
 

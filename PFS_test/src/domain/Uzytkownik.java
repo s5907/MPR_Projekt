@@ -42,6 +42,8 @@ public class Uzytkownik extends Entity {
 		this.pesel = pesel;
 	}
 
+	
+	
 	public User getUser() {
 		return user;
 	}

@@ -7,8 +7,8 @@ import domain.User;
 
 public class IRepozytoriumKatalog {
 
-	public IUserRepozytorium getUsers();
-	public IRepozytorium<User>getUzytkownik();
+	public IUserRepozytorium getUzytkownicy();
+	public IRepozytorium<Uzytkownik>getUzytkownik();
 	
 	
 }
