@@ -5,7 +5,7 @@ import java.util.List;
 
 import domain.User;
 
-import repositories.IRepository;
+import repozytorium.IRepozytorium;
 
 import repositories.impl.UserRepository;
 
@@ -31,7 +31,7 @@ try {
 			Statement createTable = connection.createStatement();
 			createTable.executeUpdate(createTableSql);
 			*/
-			IRepository<User> users = new UserRepository(connection);
+			IRepozytorium<User> users = new UserRepository(connection);
 			users.save(jnowak);
 			List<User> usersFromDb= users.getAll();
 			
