@@ -37,7 +37,7 @@ public class User extends Entity {
 	public Uzytkownik getUzytkownik() {
 		return uzytkownik;
 	}
-	public void setPerson(Uzytkownik uzytkownik) {
+	public void setUzytkownik(Uzytkownik uzytkownik) {
 		this.uzytkownik = uzytkownik;
 	}
 

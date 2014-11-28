@@ -1,14 +1,13 @@
 package repozytorium;
+import domain.*;
 
 
-import repozytorium.IUserRepozytorium;
-import repozytorium.IRepozytorium;
-import domain.User;
+public interface IRepozytoriumKatalog {
 
-public class IRepozytoriumKatalog {
-
-	public IUserRepozytorium getUzytkownicy();
-	public IRepozytorium<Uzytkownik>getUzytkownik();
+	public IRepozytorium<Uzytkownik> getUzytkownik();
+	public IRepozytorium<User>getUser();
+	public IRepozytorium<Role> getRoles();
+	
 	
 	
 }
