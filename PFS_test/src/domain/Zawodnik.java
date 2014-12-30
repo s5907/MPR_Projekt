@@ -60,7 +60,7 @@ public class Zawodnik extends Entity {
 	}
 
 	public void setKategoria(String kategoria) {
-		this.kategoria = kategoria;
+		this.kategoria= kategoria;
 	}
 
 	public String getDyscyplina() {

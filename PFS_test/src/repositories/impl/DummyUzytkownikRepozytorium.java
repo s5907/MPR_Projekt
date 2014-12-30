@@ -2,50 +2,50 @@ package repositories.impl;
 
 import java.util.List;
 
-import repozytorium.IRepozytorium;
 import domain.Uzytkownik;
+import repozytorium.IRepozytorium;
 
-public class DummyUzytkownikRepozytorium  implements IRepozytorium<Uzytkownik> {
 
-private DummyDb db;
+public class DummyUzytkownikRepozytorium implements IRepozytorium<Uzytkownik>{
+
+	private DummyDb db;
 	
 	public DummyUzytkownikRepozytorium(DummyDb db) {
 		super();
 		this.db = db;
 	}
 
-
-	
-	
-
 	@Override
 	public void save(Uzytkownik entity) {
-		// TODO Auto-generated method stub
 
+		db.uzytkownik.add(entity);
+		
 	}
 
 	@Override
 	public void update(Uzytkownik entity) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void delete(Uzytkownik entity) {
-		// TODO Auto-generated method stub
 
+		db.uzytkownik.remove(entity);
+		
 	}
 
 	@Override
 	public Uzytkownik get(int id) {
-		// TODO Auto-generated method stub
+
+		for(Uzytkownik p: db.uzytkownik)
+			if(p.getId()==id)
+				return p;
 		return null;
 	}
 
 	@Override
 	public List<Uzytkownik> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return db.uzytkownik;
 	}
 
 }

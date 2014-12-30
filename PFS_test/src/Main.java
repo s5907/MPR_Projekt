@@ -4,23 +4,27 @@ import java.sql.SQLException;
 import java.util.List;
 
 import domain.User;
-
 import repozytorium.IRepozytorium;
+import repozytorium.IRepozytoriumKatalog;
 
-import repositories.impl.UserRepository;
+import unitofwork.IUnitOfWork;
+import unitofwork.UnitOfWork;
 
 
 
 public class Main {
+
 	public static void main(String[] args) {
+
 		String url="jdbc:hsqldb:hsql://localhost/workdb";
 		User jnowak = new User();
 		jnowak.setLogin("jarek");
-		jnowak.setPassword("P@ssw0rD");
+		jnowak.setPassword("p@ssword");
 		
-try {
+		try {
 			
 			Connection connection = DriverManager.getConnection(url);
+			IUnitOfWork uow = new UnitOfWork(connection);
 			/*
 			String createTableSql = 
 					"CREATE TABLE users("
@@ -31,19 +35,22 @@ try {
 			Statement createTable = connection.createStatement();
 			createTable.executeUpdate(createTableSql);
 			*/
-			IRepozytorium<User> users = new UserRepository(connection);
-			users.save(jnowak);
-			List<User> usersFromDb= users.getAll();
+			IRepozytoriumKatalog katalog = new RepozytoriumKatalog(connection, uow);
+			
+			
+			katalog.getUsers().save(adamnowak);
+			
+			List<User> usersFromDb= katalog.getUsers().getAll();
 			
 			for(User userFromDb: usersFromDb)
 				System.out.println(userFromDb.getId()+" "+userFromDb.getLogin()+" "+userFromDb.getPassword());
 			
-			User u = users.get(2);
-			u.setPassword("1111111");
-			users.update(u);
-			users.delete(usersFromDb.get(0));
-			
-			for(User userFromDb: users.getAll())
+			User u = katalog.getUsers().get(2);
+			u.setPassword("p@ssword");
+			katalog.getUsers().update(u);
+			katalog.getUsers().delete(usersFromDb.get(0));
+		
+			for(User userFromDb: katalog.getUsers().getAll())
 				System.out.println(userFromDb.getId()+" "+userFromDb.getLogin()+" "+userFromDb.getPassword());
 			
 			
@@ -53,4 +60,5 @@ try {
 		}
 		System.out.println("koniec");
 	}
+
 }
